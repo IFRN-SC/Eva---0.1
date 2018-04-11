@@ -8,7 +8,7 @@
 	alguma função indo até a classe respectiva.
 
 	Quando incluímos "Setup.h" em outra classe, é possível criar objetos de outras
-	classes sem a necessidade de inclusão.
+	classes sem a necessidade de inclusão - previnindo confusões/duplicações.
 
 ****/
 
