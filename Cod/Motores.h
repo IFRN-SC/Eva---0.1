@@ -1,9 +1,9 @@
-#ifndef MOVIMENTACAO_H
-#define MOVIMENTACAO_H
+#ifndef MOTORES_H
+#define MOTORES_H
 
 #include "Setup.h"
 
-class Movimentacao {
+class Motores {
 private: const int VELPADRAO;
 public:
 	/**** Funções de movimentação básica ****/
@@ -36,13 +36,13 @@ public:
 
 	/*------------------------------------*/
 
-	void Movimentacao::setVelPadrao(int vel) { VELPADRAO = vel; } 
+	void Motores::setVelPadrao(int vel) { VELPADRAO = vel; } 
 	/*         ^                  ^                  ^         
 		Essa função foi criada para a facilitação da determinação
 		da velocidade padrão.
 	*/
 };
 
-//static Movimentacao motores;
+//static Motores motores;
 
 #endif
