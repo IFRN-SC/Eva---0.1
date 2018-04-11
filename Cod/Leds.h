@@ -9,6 +9,4 @@ public:
 	}
 };
 
-static Leds leds; // Uso geral!
-
 #endif
