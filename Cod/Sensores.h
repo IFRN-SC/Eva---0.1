@@ -4,37 +4,39 @@
 class Sensores {
 public:
 	int centrais();
-	int ladoVirar();
-private:
-	bool esq2_Branco(); 	// Mais esquerdo Branco
-	bool esq2_Preto(); 		// Mais esquerdo Preto
-	bool esq_Branco();      // Esquerdo Branco
-	bool esq_Preto();       // Esquerdo Preto
-	bool dir_Branco();      // Dreito Branco
-	bool dir_Preto();      	// Direito Preto
-	bool dir2_Branco(); 	// Mais direito Branco
-	bool dir2_Preto(); 		// Mais direito Preto
+	char qualLadoVirar();
+
+	bool maisEsqViuBranco(); 	// Sensor mais esquerdo Branco
+	bool maisEsqViuPreto(); 	// Sensor mais esquerdo Preto
+	bool esqViuBranco();      	// Sensor esquerdo Branco
+	bool esqViuPreto();       	// Sensor esquerdo Preto
+	bool dirViuBranco();      	// Sensor dreito Branco
+	bool dirViuPreto();      	// Sensor direito Preto
+	bool maisDirViuBranco(); 	// Sensor mais direito Branco
+	bool maisDirViuPreto(); 	// Sensor mais direito Preto
 	
-	bool B_B_B_B();
-	bool P_P_P_P();
+	bool todosBrancos();
+	bool todosPretos();
 
-	bool B_P_B_B();
-	bool B_B_P_B();
-	bool P_B_B_B();
-	bool B_B_B_P();
+private:
 
-	bool P_P_B_B();
-	bool B_B_P_P();
-	bool B_P_P_B();
-	bool P_B_B_P();
-	bool P_B_P_B();
-	bool B_P_B_P();
+	bool branco_preto_branco_branco();
+	bool branco_branco_preto_branco();
+	bool preto_branco_branco_branco();
+	bool branco_branco_branco_preto();
 
-	bool P_P_P_B();
-	bool B_P_P_P();
-	bool P_P_B_P();
-	bool P_B_P_P();
+	bool preto_preto_branco_branco();
+	bool branco_branco_preto_preto();
+	bool branco_preto_preto_branco();
+	bool preto_branco_branco_preto();
+	bool preto_branco_preto_branco();
+	bool branco_preto_branco_preto();
+
+	bool preto_preto_preto_branco();
+	bool branco_preto_preto_preto();
+	bool preto_preto_branco_preto();
+	bool preto_branco_preto_preto();
 };
 
-static Sensores refletancia;
+
 #endif
