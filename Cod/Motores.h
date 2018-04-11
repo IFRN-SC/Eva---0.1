@@ -24,7 +24,7 @@ public:
 
 	/*------------------------------------------------------------------------*/
 
-	void Motores::setVelPadrao(int VEL_SET) { VEL_PADRAO = VET_SET; } 
+	void setVelPadrao(int VEL_SET) { VEL_PADRAO = VET_SET; } 
 	/*         ^                  ^                  ^         
 		Essa função foi criada para a facilitação da determinação
 		da velocidade padrão.
