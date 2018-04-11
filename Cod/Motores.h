@@ -24,22 +24,6 @@ public:
 
 	/*-------------------------------------*/
 
-	void alinhar(String sensorViuPreto) {
-		switch (sensor) {
-
-			/* D2 - D - E - E2 */
-
-			case 'D': // Sensor direito viu preto.
-				virarEsquerda();
-				break;
-			case 'E': // Sensor esquerdo viu preto.
-				virarDireita();
-				break;
-		}
-	}
-
-	/*------------------------------------*/
-
 	void Motores::setVelPadrao(int VEL_SET) { VEL_PADRAO = VET_SET; } 
 	/*         ^                  ^                  ^         
 		Essa função foi criada para a facilitação da determinação
