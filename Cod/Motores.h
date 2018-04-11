@@ -3,21 +3,22 @@
 
 #include "Setup.h"
 
+static const int VEL_PADRAO;
+
 class Motores {
-private: const int VELPADRAO;
 public:
 	/**** Funções de movimentação básica ****/
 	
-	void emFrente() { robo.acionarMotores(VELPADRAO,VELPADRAO); }
-	void virarEsquerda() { robo.acionarMotores(VELPADRAO *(-1), VELPADRAO); }
-	void virarDireita() { robo.acionarMotores(VELPADRAO,VELPADRAO *(-1)); }
+	void emFrente() { robo.acionarMotores(VEL_PADRAO,VEL_PADRAO); }
+	void virarEsquerda() { robo.acionarMotores(VEL_PADRAO *(-1), VEL_PADRAO); }
+	void virarDireita() { robo.acionarMotores(VEL_PADRAO,VEL_PADRAO *(-1)); }
 
 	void parar(int tempo) {
 		robo.acionarMotores(0,0); 
 		delay(tempo);
 	}
 	void recuar(int tempo) {
-		robo.acionarMotores(VELPADRAO * (-1),VELPADRAO * (-1));
+		robo.acionarMotores(VEL_PADRAO * (-1),VEL_PADRAO * (-1));
 		delay(tempo);
 	}
 
@@ -25,10 +26,13 @@ public:
 
 	void alinhar(String sensorViuPreto) {
 		switch (sensor) {
-			case "dir": // 
+
+			/* D2 - D - E - E2 */
+
+			case 'D': // Sensor direito viu preto.
 				virarEsquerda();
 				break;
-			case "esq":
+			case 'E': // Sensor esquerdo viu preto.
 				virarDireita();
 				break;
 		}
@@ -36,13 +40,11 @@ public:
 
 	/*------------------------------------*/
 
-	void Motores::setVelPadrao(int vel) { VELPADRAO = vel; } 
+	void Motores::setVelPadrao(int VEL_SET) { VEL_PADRAO = VET_SET; } 
 	/*         ^                  ^                  ^         
 		Essa função foi criada para a facilitação da determinação
 		da velocidade padrão.
 	*/
 };
-
-//static Motores motores;
 
 #endif
