@@ -3,7 +3,7 @@
 
 #include "Setup.h"
 
-static const int VEL_PADRAO;
+static int VEL_PADRAO;
 
 class Motores {
 public:
@@ -22,13 +22,15 @@ public:
 		delay(tempo);
 	}
 
-	/*-------------------------------------*/
+	/*------------------------------------------------------------------------*/
 
 	void Motores::setVelPadrao(int VEL_SET) { VEL_PADRAO = VET_SET; } 
 	/*         ^                  ^                  ^         
 		Essa função foi criada para a facilitação da determinação
 		da velocidade padrão.
 	*/
+
+	/*------------------------------------------------------------------------*/
 };
 
 #endif
