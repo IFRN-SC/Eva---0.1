@@ -3,7 +3,7 @@
 
 #include "Setup.h"
 
-static const int DISTANCIA_OBSTACULO;
+static int DISTANCIA_OBSTACULO;
 
 class Obstaculo {
 public:
@@ -19,7 +19,7 @@ public:
 
 private:
 
-	Movimentacao motores;
+	Motores motores;
 
 	void alinhar(float DISTANCIA_SET);
 	bool desalinhado();
