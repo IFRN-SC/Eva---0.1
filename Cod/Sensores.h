@@ -6,7 +6,7 @@
 
 class Sensores {
 public:
-	int centrais();
+	
 	char qualLadoVirar();
 
 	bool maisEsqViuBranco(); 	// Sensor mais esquerdo Branco
