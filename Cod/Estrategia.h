@@ -10,11 +10,14 @@
 
 class Estrategia {
 public:
+	
 	void iniciar();
 private:
+
 	void seguirLinha();
 	void curvas();
 	void viuObstaculo();
+	void passarVerde();
 
 	Sonares sonar;
 	Sensores sensores;

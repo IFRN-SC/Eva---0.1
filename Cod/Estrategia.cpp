@@ -39,10 +39,15 @@ void Estrategia::curvas() {
 		motores.virarDireita();
 	}
 	else {
-		passarVerde();
+		//passarVerde();
 	}
 }
-
+/*
 void Estrategia::passarVerde() {
-	
-}
+	if (sensor.esqViuPreto()){
+		while (!sensores.todosPretos()){
+			motores.emFrente();
+		}
+
+	}
+}*/
