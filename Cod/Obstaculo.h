@@ -1,7 +1,11 @@
 #ifndef OBSTACULO_H
 #define OBSTACULO_H
 
-#include "Setup.h"
+//#include "Setup.h"
+#include <robo_hardware.h>
+#include "Motores.h"
+#include "Sensores.h"
+#include "Sonares.h"
 
 static int DISTANCIA_OBSTACULO;
 
@@ -20,11 +24,10 @@ public:
 private:
 
 	Motores motores;
+	Sonares sonar;
 
-	void alinhar(float DISTANCIA_SET);
+	void alinhar(char lado);
 	bool desalinhado();
 };
-
-//static Obstaculo obstaculo;
 
 #endif

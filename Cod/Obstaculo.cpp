@@ -4,7 +4,7 @@ void Obstaculo::iniciar(int DISTANCIA_OBSTACULO){
 	
 	//piscarLeds();
 	
-	bool paraDireita; // Se o robô está indo realmente pela direita.
+	bool pelaDireita; // Se o robô está indo realmente pela direita.
 
 	motores.parar(150); 
 	motores.recuar(180);
@@ -35,13 +35,13 @@ void Obstaculo::iniciar(int DISTANCIA_OBSTACULO){
 
 	if(pelaDireita){
 		for (int i=10; i!=0; --i){
-			robo.acionarMotores((VEL_PADRAO * (i/100)),VEL_PADRAO)
+			robo.acionarMotores((VEL_PADRAO * (i/100)),VEL_PADRAO);
 			delay(200);	
 		}
 	} 
 	else {
 		for (int i=10; i!=0; --i){
-			robo.acionarMotores(VEL_PADRAO,(VEL_PADRAO * (i/100)))
+			robo.acionarMotores(VEL_PADRAO,(VEL_PADRAO * (i/100)));
 			delay(200);	
 		}
 	}
@@ -53,7 +53,7 @@ void Obstaculo::alinhar(char lado){
 	switch (lado){
 		case 'R':
 			while(desalinhado()){
-				robo.motores((VEL_PADRAO * 0.10) * (-1),VEL_PADRAO * (-1)); 
+				robo.acionarMotores((VEL_PADRAO * 0.10) * (-1),VEL_PADRAO * (-1)); 
 				/*  ^				^				^	 		^  
 					Motor contrário recua com 10% de VEL_PADRAO.
 				*/
@@ -61,7 +61,7 @@ void Obstaculo::alinhar(char lado){
 			break;
 		case 'L':
 			while(desalinhado()){
-				robo.motores(VEL_PADRAO * (-1),(VEL_PADRAO * 0.10) * (-1)); 
+				robo.acionarMotores(VEL_PADRAO * (-1),(VEL_PADRAO * 0.10) * (-1)); 
 				/*  ^				^				^	 		^  
 					Motor contrário recua com 10% de VEL_PADRAO.
 				*/
@@ -72,7 +72,7 @@ void Obstaculo::alinhar(char lado){
 }
 
 bool Obstaculo::desalinhado(){
-	if (sensor.branco_branco_branco_branco()){
+	if (sensor.todosBrancos()){
 		return true;
 	} else {
 		return false;

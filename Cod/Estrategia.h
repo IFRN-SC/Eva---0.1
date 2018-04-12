@@ -1,9 +1,12 @@
 #ifndef ESTRATEGIA_H
 #define ESTRATEGIA_H
 
-#include "Setup.h"
+//#include "Setup.h"
+#include "Sonares.h"
+#include "Sensores.h"
+#include "Obstaculo.h"
+#include "Motores.h"
 
-#define DISTANCIA_OBSTACULO 10.0
 
 class Estrategia {
 public:
@@ -12,8 +15,11 @@ private:
 	void seguirLinha();
 	void curvas();
 	void viuObstaculo();
-};
 
-static Estrategia estrategia;
+	Sonares sonar;
+	Sensores sensores;
+	Obstaculo obstaculo;
+	Motores motores;
+};
 
 #endif

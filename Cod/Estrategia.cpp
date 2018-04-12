@@ -1,8 +1,12 @@
 #include "Estrategia.h"
 
-void Estrategia::run() {
+void Estrategia::iniciar() {
 	if (sonar.viuObstaculo(DISTANCIA_OBSTACULO)) {
-		obstaculo.run(DISTANCIA_OBSTACULO); // Delay - (parar,recuar)
+		obstaculo.iniciar(DISTANCIA_OBSTACULO);
+		/*
+			A partir de qual DISTANCIA_OBSTACULO devo
+		  	começar a desviar?
+		*/
 	} 
 	else {
 		seguirLinha();
@@ -10,14 +14,14 @@ void Estrategia::run() {
 }
 
 void Estrategia::seguirLinha() {
-	if(sensores.B_Ṕ_B_P()) {
+	if(sensores.dirViuPreto()) {
 		motores.virarEsquerda();
 	} 
-	else if(sensores.B_B_P_B()) {
+	else if(sensores.esqViuPreto()) {
 		motores.virarDireita();
 	}
-	else if(sensores.B_B_B_B() ||
-			sensores.P_P_P_P()
+	else if(sensores.todosBrancos() ||
+			sensores.todosPretos()
 			)
 	{
 		motores.emFrente();
@@ -28,10 +32,12 @@ void Estrategia::seguirLinha() {
 }
 
 void Estrategia::curvas() {
-	switch (sensores.ladoVirar()) {
-		case 12: // Sensor 1, Sensor 2 = Dir2 e Dir.
-			motores.virarEsquerda(); // Enrolar esquerda
-		case 34:
-			motores.virarDireita(); // Enrolar direita
+	switch (sensores.qualLadoVirar()) {
+		case 'L': // Os 2 sensores esquerdos viram preto.
+			motores.virarEsquerda();
+		case 'R': // Os 2 sensores direitos viram preto. 
+			motores.virarDireita();
+		//default:
+			//verde.iniciar();
 	}
 }

@@ -1,81 +1,72 @@
 #include "Sensores.h"
 
-int Sensores::centrais() {
-	if (esq_Preto()){
-		return 2; // Sensor esq viu preto.
+char Sensores::qualLadoVirar() {
+	if(preto_preto_branco_branco()) {
+		return 'L'; // Vire pra esquerda!
 	} 
-	else if (dir_Preto()) {
-		return 3; // Sensor dir viu preto.
+	else if(branco_branco_preto_preto()) {
+		return 'R'; // Vire pra direita!
 	}
 }
 
-int Sensores::ladoVirar() {
-	if(sensores.P_P_B_B()) {
-		return 12;
-	} 
-	else if(sensores.B_B_P_P()) {
-		return 34;
-	}
-}
-
-bool Sensores::esq2_Branco(){
-	if (robo.lerSensorLinhaEsq2() > refleEsq2.getSeparacao()) {
+bool Sensores::maisEsqViuBranco(){
+	if (robo.lerSensorLinhaEsq2() > Separacao_Branco_Preto) {
 		return true;	
 	} else {
 		return false;
 	}
 }
 
-bool Sensores::esq2_Preto(){
-	if (robo.lerSensorLinhaEsq2() < refleEsq2.getSeparacao()) {
+bool Sensores::maisEsqViuPreto(){
+	if (robo.lerSensorLinhaEsq2() < Separacao_Branco_Preto) {
 		return true;
 	} else {
 		return false;
 	}
 }
 
-bool Sensores::esq_Branco(){
-	if (robo.lerSensorLinhaEsq() > refleEsq.getSeparacao()) {
+bool Sensores::esqViuBranco(){
+	if (robo.lerSensorLinhaEsq() > Separacao_Branco_Preto) {
 		return true;	
 	} else {
 		return false;
 	}
 }
 
-bool Sensores::esq_Preto(){
-	if (robo.lerSensorLinhaEsq() < refleEsq.getSeparacao()) {
+bool Sensores::esqViuPreto(){
+	if (robo.lerSensorLinhaEsq() < Separacao_Branco_Preto) {
 		return true;	
 	} else {
 		return false;
 	}
 }
 
-bool Sensores::dir_Branco(){
-	if(robo.lerSensorLinhaDir() > refleDir.getSeparacao()){
+bool Sensores::dirViuBranco(){
+	if(robo.lerSensorLinhaDir() > Separacao_Branco_Preto){
 		return true;
 	} else {
 		return false;
 	}	
 }
 
-bool Sensores::dir_Preto(){
-	if(robo.lerSensorLinhaDir() < refleDir.getSeparacao()){
+bool Sensores::dirViuPreto(){
+	if(robo.lerSensorLinhaDir() < Separacao_Branco_Preto){
 		return true;
 	} else {
 		return false;
 	}		
 }
 
-bool Sensores::dir2_Branco(){
-	if(robo.lerSensorLinhaDir2() > refleDir2.getSeparacao()){
+bool Sensores::maisDirViuBranco(){
+	if(robo.lerSensorLinhaDir2() > Separacao_Branco_Preto){
 		return true;
 	} else {
 		return false;
 	}	
 }   
 
-bool Sensores::dir2_Preto(){
-	if(robo.lerSensorLinhaDir2() < refleDir2.getSeparacao()){
+bool Sensores::maisDirViuPreto(){
+	if(robo.lerSensorLinhaDir2() < Separacao_Branco_Preto){
 		return true;
 	} else {
 		return false;
@@ -84,128 +75,128 @@ bool Sensores::dir2_Preto(){
 
 /////////////////////////////////////////
 
-bool Sensores::B_B_B_B(){
+bool Sensores::todosBrancos(){
 	return(
-		esq2_Branco() &&
-		esq_Branco() &&
-		dir_Branco() &&
-		dir2_Branco()
+		maisEsqViuBranco() &&
+		esqViuBranco() &&
+		dirViuBranco() &&
+		maisDirViuBranco()
 	);
 }
 
-bool Sensores::P_P_P_P(){
+bool Sensores::todosPretos(){
 	return(
-		esq2_Preto() &&
-		esq_Preto() &&
-		dir_Preto() &&
-		dir2_Preto()
+		maisEsqViuPreto() &&
+		esqViuPreto() &&
+		dirViuPreto() &&
+		maisDirViuPreto()
 	);
 }
 
-bool Sensores::P_B_B_B(){
+bool Sensores::preto_branco_branco_branco(){
 	return(
-		esq2_Preto() &&
-		esq_Branco() &&
-		dir_Branco() &&
-		dir2_Branco()
+		maisEsqViuPreto() &&
+		esqViuBranco() &&
+		dirViuBranco() &&
+		maisDirViuBranco()
 	);
 }
 
-bool Sensores::B_B_B_P(){
+bool Sensores::branco_branco_branco_preto(){
 	return(
-		esq2_Branco() &&
-		esq_Branco() &&
-		dir_Branco() &&
-		dir2_Preto()
+		maisEsqViuBranco() &&
+		esqViuBranco() &&
+		dirViuBranco() &&
+		maisDirViuPreto()
 	);
 }
 
-bool Sensores::P_P_B_B(){
+bool Sensores::preto_preto_branco_branco(){
 	return(
-		esq2_Preto() &&
-		esq_Preto() &&
-		dir_Branco() &&
-		dir2_Branco()
+		maisEsqViuPreto() &&
+		esqViuPreto() &&
+		dirViuBranco() &&
+		maisDirViuBranco()
 	);
 }
 
-bool Sensores::B_B_P_P(){
+bool Sensores::branco_branco_preto_preto(){
 	return(
-		esq2_Branco() &&
-		esq_Branco() &&
-		dir_Preto() &&
-		dir2_Preto()
+		maisEsqViuBranco() &&
+		esqViuBranco() &&
+		dirViuPreto() &&
+		maisDirViuPreto()
 	);
 }
 
-bool Sensores::B_P_P_B(){
+bool Sensores::branco_preto_preto_branco(){
 	return(
-		esq2_Branco() &&
-		esq_Preto() &&
-		dir_Preto() &&
-		dir2_Branco()
+		maisEsqViuBranco() &&
+		esqViuPreto() &&
+		dirViuPreto() &&
+		maisDirViuBranco()
 	);
 }
 
-bool Sensores::P_B_B_P(){
+bool Sensores::preto_branco_branco_preto(){
 	return(
-		esq2_Preto() &&
-		esq_Branco() &&
-		dir_Branco() &&
-		dir2_Preto()
+		maisEsqViuPreto() &&
+		esqViuBranco() &&
+		dirViuBranco() &&
+		maisDirViuPreto()
 	);
 }
 
-bool Sensores::P_B_P_B(){
+bool Sensores::preto_branco_preto_branco(){
 	return(
-		esq2_Preto() &&
-		esq_Branco() &&
-		dir_Preto() &&
-		dir2_Branco()
+		maisEsqViuPreto() &&
+		esqViuBranco() &&
+		dirViuPreto() &&
+		maisDirViuBranco()
 	);
 }
 
-bool Sensores::B_P_B_P(){
+bool Sensores::branco_preto_branco_preto(){
 	return(
-		esq2_Branco() &&
-		esq_Preto() &&
-		dir_Branco() &&
-		dir2_Preto()
+		maisEsqViuBranco() &&
+		esqViuPreto() &&
+		dirViuBranco() &&
+		maisDirViuPreto()
 	);
 }
 
-bool Sensores::P_P_P_B(){
+bool Sensores::preto_preto_preto_branco(){
 	return(
-		esq2_Preto() &&
-		esq_Preto() &&
-		dir_Preto() &&
-		dir2_Branco()
+		maisEsqViuPreto() &&
+		esqViuPreto() &&
+		dirViuPreto() &&
+		maisDirViuBranco()
 	);
 }
 
-bool Sensores::B_P_P_P(){
+bool Sensores::branco_preto_preto_preto(){
 	return(
-		esq2_Branco() &&
-		esq_Preto() &&
-		dir_Preto() &&
-		dir2_Preto()
+		maisEsqViuBranco() &&
+		esqViuPreto() &&
+		dirViuPreto() &&
+		maisDirViuPreto()
 	);
 }
 
-bool Sensores::P_P_B_P(){
+bool Sensores::preto_preto_branco_preto(){
 	return(
-		esq2_Preto() &&
-		esq_Preto() &&
-		dir_Branco() &&
-		dir2_Preto()
+		maisEsqViuPreto() &&
+		esqViuPreto() &&
+		dirViuBranco() &&
+		maisDirViuPreto()
 	);
 }
 
-bool Sensores::P_B_P_P(){
+bool Sensores::preto_branco_preto_preto(){
 	return(
-		esq2_Preto() &&
-		esq_Branco() &&
-		dir_Preto() &&
-		dir2_Preto()
+		maisEsqViuPreto() &&
+		esqViuBranco() &&
+		dirViuPreto() &&
+		maisDirViuPreto()
 	);
 }

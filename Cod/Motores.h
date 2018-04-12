@@ -1,7 +1,8 @@
 #ifndef MOTORES_H
 #define MOTORES_H
 
-#include "Setup.h"
+//#include "Setup.h"
+#include <robo_hardware.h>
 
 static int VEL_PADRAO;
 
@@ -24,7 +25,7 @@ public:
 
 	/*------------------------------------------------------------------------*/
 
-	void setVelPadrao(int VEL_SET) { VEL_PADRAO = VET_SET; } 
+	void setVelPadrao(int VEL_SET) { VEL_PADRAO = VEL_SET; } 
 	/*         ^                  ^                  ^         
 		Essa função foi criada para a facilitação da determinação
 		da velocidade padrão.

@@ -1,6 +1,9 @@
 #ifndef SENSORES_H
 #define SENSORES_H
 
+//#include "Setup.h"
+#include <robo_hardware.h>
+
 class Sensores {
 public:
 	int centrais();
@@ -17,6 +20,10 @@ public:
 	
 	bool todosBrancos();
 	bool todosPretos();
+	
+	void setSeparacao(int valor){
+		Separacao_Branco_Preto = valor;
+	}
 
 private:
 
@@ -36,7 +43,10 @@ private:
 	bool branco_preto_preto_preto();
 	bool preto_preto_branco_preto();
 	bool preto_branco_preto_preto();
+	
+	int Separacao_Branco_Preto;
 };
 
+static Sensores sensores,sensor;
 
 #endif
