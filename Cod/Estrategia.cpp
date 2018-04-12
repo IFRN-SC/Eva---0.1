@@ -14,10 +14,10 @@ void Estrategia::iniciar() {
 }
 
 void Estrategia::seguirLinha() {
-	if(sensores.dirViuPreto()) {
+	if(sensor.dirViuPreto()) {
 		motores.virarEsquerda();
 	} 
-	else if(sensores.esqViuPreto()) {
+	else if(sensor.esqViuPreto()) {
 		motores.virarDireita();
 	}
 	else if(sensores.todosBrancos() ||
@@ -32,12 +32,17 @@ void Estrategia::seguirLinha() {
 }
 
 void Estrategia::curvas() {
-	switch (sensores.qualLadoVirar()) {
-		case 'L': // Os 2 sensores esquerdos viram preto.
-			motores.virarEsquerda();
-		case 'R': // Os 2 sensores direitos viram preto. 
-			motores.virarDireita();
-		//default:
-			//verde.iniciar();
+	if(sensores.preto_preto_branco_branco()) {
+		motores.virarEsquerda();
 	}
+	else if (sensores.branco_branco_preto_preto()){
+		motores.virarDireita();
+	}
+	else {
+		passarVerde();
+	}
+}
+
+void Estrategia::passarVerde() {
+	
 }
