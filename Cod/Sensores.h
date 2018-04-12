@@ -6,8 +6,6 @@
 
 class Sensores {
 public:
-	
-	char qualLadoVirar();
 
 	bool maisEsqViuBranco(); 	// Sensor mais esquerdo Branco
 	bool maisEsqViuPreto(); 	// Sensor mais esquerdo Preto
@@ -17,16 +15,10 @@ public:
 	bool dirViuPreto();      	// Sensor direito Preto
 	bool maisDirViuBranco(); 	// Sensor mais direito Branco
 	bool maisDirViuPreto(); 	// Sensor mais direito Preto
-	
+
 	bool todosBrancos();
 	bool todosPretos();
 	
-	void setSeparacao(int valor){
-		Separacao_Branco_Preto = valor;
-	}
-
-private:
-
 	bool branco_preto_branco_branco();
 	bool branco_branco_preto_branco();
 	bool preto_branco_branco_branco();

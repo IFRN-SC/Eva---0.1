@@ -1,76 +1,65 @@
 #include "Sensores.h"
 
-char Sensores::qualLadoVirar() {
-	if(preto_preto_branco_branco()) {
-		return 'L'; // Vire pra esquerda!
-	} 
-	else if(branco_branco_preto_preto()) {
-		return 'R'; // Vire pra direita!
-	}
-}
 
 bool Sensores::maisEsqViuBranco(){
-	if (robo.lerSensorLinhaEsq2() > Separacao_Branco_Preto) {
+	if (robo.lerSensorLinhaEsq2() > Separacao_Branco_Preto)
 		return true;	
-	} else {
+	else
 		return false;
-	}
 }
 
 bool Sensores::maisEsqViuPreto(){
-	if (robo.lerSensorLinhaEsq2() < Separacao_Branco_Preto) {
+	if (robo.lerSensorLinhaEsq2() < Separacao_Branco_Preto)
 		return true;
-	} else {
+	else
 		return false;
-	}
 }
 
 bool Sensores::esqViuBranco(){
-	if (robo.lerSensorLinhaEsq() > Separacao_Branco_Preto) {
+	if (robo.lerSensorLinhaEsq() > Separacao_Branco_Preto)
 		return true;	
-	} else {
+	else
 		return false;
-	}
 }
 
 bool Sensores::esqViuPreto(){
-	if (robo.lerSensorLinhaEsq() < Separacao_Branco_Preto) {
+	if (robo.lerSensorLinhaEsq() < Separacao_Branco_Preto)
 		return true;	
-	} else {
+	else 
 		return false;
-	}
+	
 }
 
 bool Sensores::dirViuBranco(){
-	if(robo.lerSensorLinhaDir() > Separacao_Branco_Preto){
+	if(robo.lerSensorLinhaDir() > Separacao_Branco_Preto)
 		return true;
-	} else {
+	else 
 		return false;
-	}	
+		
 }
 
 bool Sensores::dirViuPreto(){
-	if(robo.lerSensorLinhaDir() < Separacao_Branco_Preto){
+	if(robo.lerSensorLinhaDir() < Separacao_Branco_Preto)
 		return true;
-	} else {
+	else 
 		return false;
-	}		
+			
 }
 
 bool Sensores::maisDirViuBranco(){
-	if(robo.lerSensorLinhaDir2() > Separacao_Branco_Preto){
+	if(robo.lerSensorLinhaDir2() > Separacao_Branco_Preto)
 		return true;
-	} else {
+	else 
 		return false;
-	}	
+		
 }   
 
 bool Sensores::maisDirViuPreto(){
-	if(robo.lerSensorLinhaDir2() < Separacao_Branco_Preto){
+	if(robo.lerSensorLinhaDir2() < Separacao_Branco_Preto)
 		return true;
-	} else {
+	else 
 		return false;
-	}
+	
 } 
 
 /////////////////////////////////////////
@@ -92,6 +81,8 @@ bool Sensores::todosPretos(){
 		maisDirViuPreto()
 	);
 }
+
+///////////////////////////////////////////////////////
 
 bool Sensores::preto_branco_branco_branco(){
 	return(
