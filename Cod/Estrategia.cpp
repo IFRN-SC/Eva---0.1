@@ -25,12 +25,20 @@ void Estrategia::seguirLinha() {
 			)
 	{
 		motores.emFrente();
+	} else {
+		motores.parar(500);
+		while(1){
+			motores.virarEsquerda();
+			delay(500);
+			motores.virarDireita();
+			delay(500);
+		}
 	}
-	else {
+	/*else {
 		curvas();	
-	}
+	}*/
 }
-
+/*
 void Estrategia::curvas() {
 	if(sensores.preto_preto_branco_branco()) {
 		motores.virarEsquerda();
@@ -39,9 +47,10 @@ void Estrategia::curvas() {
 		motores.virarDireita();
 	}
 	else {
-		//passarVerde();
+		passarVerde();
 	}
 }
+*/
 /*
 void Estrategia::passarVerde() {
 	if (sensor.esqViuPreto()){
