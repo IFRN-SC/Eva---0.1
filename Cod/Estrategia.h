@@ -17,7 +17,7 @@ private:
 	void seguirLinha();
 	void curvas();
 	void viuObstaculo();
-	void passarVerde();
+	//void passarVerde();
 
 	Sonares sonar;
 	Sensores sensores;
