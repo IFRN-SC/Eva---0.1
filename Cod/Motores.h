@@ -4,8 +4,6 @@
 //#include "Setup.h"
 #include <robo_hardware.h>
 
-static int VEL_PADRAO;
-
 class Motores {
 public:
 	/**** Funções de movimentação básica ****/
@@ -25,13 +23,17 @@ public:
 
 	/*------------------------------------------------------------------------*/
 
+	int VEL_PADRAO;
+
 	void setVelPadrao(int VEL_SET) { VEL_PADRAO = VEL_SET; } 
 	/*         ^                  ^                  ^         
 		Essa função foi criada para a facilitação da determinação
 		da velocidade padrão.
 	*/
-
+	
 	/*------------------------------------------------------------------------*/
+
+	
 };
 
 #endif
