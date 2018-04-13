@@ -23,11 +23,11 @@ public:
 
 	void pinarLeds(bool value) { // Define a pinagem para os LEDs.
 		if (value) 
-		leds.pinar(); 
+			leds.pinar(); 
 	}
 	void calibrar(bool value) { // Entra no modo de Calibração.
 		if (value)
-		calibracao.iniciar();
+			calibracao.iniciar();
 	}
 	void motoresVelPadrao(int VEL_SET) { // Seta o VELPADRAO em "Motores.h".
 		motores.setVelPadrao(VEL_SET); 
@@ -35,6 +35,11 @@ public:
 	void distanciaObstaculo(int DISTANCIA_SET) { // Seta DISTANCIA_OBSTACULO em ...
 		obstaculo.setDistancia(DISTANCIA_SET);   // ... "Obstaculo.h".
 	}
+	/*
+	void separacaoBrancoPreto(int valor){
+		sensores.setSeparacao(valor);
+	}
+	*/
 
 private:
 
