@@ -3,6 +3,7 @@
 
 //#include "Setup.h"
 #include <robo_hardware.h>
+#include "Calibracao.h"
 
 class Sensores {
 public:
@@ -35,10 +36,14 @@ public:
 	bool branco_preto_preto_preto();
 	bool preto_preto_branco_preto();
 	bool preto_branco_preto_preto();
-	
-	int Separacao_Branco_Preto;
+
+private:
+
+	Calibracao refle_maisDir, refle_Dir, refle_Esq, refle_maisEsq;
+
 };
 
-static Sensores sensores,sensor;
+static Sensores sensores, sensor;
+
 
 #endif
