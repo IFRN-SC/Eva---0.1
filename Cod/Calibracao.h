@@ -7,10 +7,23 @@ class Calibracao {
 public:
 
 	void iniciar();
+	float getSeparacao(){ return (media); }
+	
+	float media;
 
 private:
 
+
 	void menuCalibracao();
+	void esperarParaLer();
+
+	void minimoBranco();
+	void maximoPreto();
+
+
+	Calibracao(){
+		escolha = 'S';
+	}
 
 	int escolha;
 };
