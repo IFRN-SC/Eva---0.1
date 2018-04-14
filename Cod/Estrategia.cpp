@@ -1,6 +1,6 @@
 #include "Estrategia.h"
 
-void Estrategia::iniciar() {
+void Estrategia::run() {
 	if (sonar.viuObstaculo(DISTANCIA_OBSTACULO)) {
 		obstaculo.iniciar(DISTANCIA_OBSTACULO);
 		/*

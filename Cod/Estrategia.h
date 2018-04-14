@@ -11,7 +11,7 @@
 class Estrategia {
 public:
 	
-	void iniciar();
+	void run();
 private:
 
 	void seguirLinha();
