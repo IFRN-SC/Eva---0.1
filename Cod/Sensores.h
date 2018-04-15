@@ -1,45 +1,63 @@
 #ifndef SENSORES_H
 #define SENSORES_H
 
-//#include "Setup.h"
 #include <robo_hardware.h>
 #include "Calibracao.h"
 
 class Sensores {
 public:
+	//~~~~~~~~~~~ SONAR ~~~~~~~~~~~//
 
-	bool maisEsqViuBranco(); 	// Sensor mais esquerdo Branco
-	bool maisEsqViuPreto(); 	// Sensor mais esquerdo Preto
-	bool esqViuBranco();      	// Sensor esquerdo Branco
-	bool esqViuPreto();       	// Sensor esquerdo Preto
-	bool dirViuBranco();      	// Sensor dreito Branco
-	bool dirViuPreto();      	// Sensor direito Preto
-	bool maisDirViuBranco(); 	// Sensor mais direito Branco
-	bool maisDirViuPreto(); 	// Sensor mais direito Preto
+	bool sonarViuObstaculo();
 
-	bool todosBrancos();
-	bool todosPretos();
-	
+	//----------------------------//
+
+	//~~~~~~~~~ SENSORES DE REFLETÂNCIA ~~~~~~~~~//
+
+	// Caso "Todos"
+
+	bool branco_branco_branco_branco();
+	bool preto_preto_preto_preto();
+
+	// Caso "Internos"
+
 	bool branco_preto_branco_branco();
 	bool branco_branco_preto_branco();
+
+	// Caso "Externos"
+
 	bool preto_branco_branco_branco();
 	bool branco_branco_branco_preto();
 
+	// Caso "Duplo"
+
 	bool preto_preto_branco_branco();
 	bool branco_branco_preto_preto();
-	bool branco_preto_preto_branco();
-	bool preto_branco_branco_preto();
-	bool preto_branco_preto_branco();
-	bool branco_preto_branco_preto();
+
+	// Caso "Triplo"
 
 	bool preto_preto_preto_branco();
 	bool branco_preto_preto_preto();
-	bool preto_preto_branco_preto();
+
+	// Caso "Alternados"
+
+	bool preto_branco_preto_branco();
+	bool branco_preto_branco_preto();
+
+	// Caso "Interno branco"
+
 	bool preto_branco_preto_preto();
+	bool preto_preto_branco_preto();
+
+	// Caso "Duplo preto"
+
+	bool preto_branco_branco_preto();
+	bool branco_preto_preto_branco();	
+
 
 private:
 
-	Calibracao refle_maisDir, refle_Dir, refle_Esq, refle_maisEsq;
+	Calibracao refle_maisEsq, refle_Esq, refle_Dir, refle_maisDir;
 
 };
 
