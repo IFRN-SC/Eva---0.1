@@ -1,18 +1,16 @@
 #include "Setup.h"
 #include "Estrategia.h"
 
-Setup set;
+
 Estrategia estrategia;
+Motores motores;
 
 void setup(){
 	Serial.begin(9600);
 	robo.configurar(false);
-	//set.pinarLeds(false);   
-	//set.calibrar(false);
-	set.motoresVelPadrao(40);
-	set.distanciaObstaculo(10);
-	//set.separacaoBrancoPreto();
- 
+	estrategia.calibrar(false);
+	estrategia.setVelocidade(40);
+	estrategia.distanciaObstaculo(10); 
 }
 
 void loop(){
