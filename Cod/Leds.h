@@ -1,6 +1,17 @@
 #ifndef LEDS_H
 #define LEDS_H
 
+/* 
+// PINAGEM - LEDS
+
+#define LED_maisEsq 9
+#define LED_Esq 10
+#define LED_Dir 11
+#define LED_maisDir 12
+
+// 
+*/
+
 class Leds {
 public:
 	void pinar(){
