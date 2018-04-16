@@ -19,13 +19,8 @@ private:
 
 	void minimoBranco();
 	void maximoPreto();
-
-
-	Calibracao(){
-		escolha = 'S';
-	}
-
-	int escolha;
+	
+	bool estiverCalibrando;
 };
 
 #endif
