@@ -61,7 +61,8 @@ private:
 		Função que realiza a estratégia do desvio
 		de obstáculos.
 	*/
-
+	void impulso(); // Funciona que impulsiona o robô
+	
 	//void passarVerde();
 
 	Sensores sensores;
