@@ -8,9 +8,14 @@ Estrategia estrategia;
 */
 
 void setup(){
-	Serial.begin(9600);
-	robo.configurar(false);
+	Serial.begin(9600); 
+	// ^    ^ A priori, somente deves saber que isto habilita o uso do Serial
+	robo.configurar(false); // Habilita ou desalibita a garra
 	estrategia.calibrar(false);
+	/* ^         ^  
+	  Determina se será feita a calibracao
+	  da separação-branco-preto.
+	*/
 }
 
 void loop(){
