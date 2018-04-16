@@ -1,65 +1,56 @@
 #include "Sensores.h"
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~ SONAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-bool Sensores::maisEsqViuBranco(){
-	return  (robo.lerSensorLinhaEsq2() > refle_maisEsq.getSeparacao());  
+bool Sensores::sonarViuObstaculo(int DISTANCIA_OBSTACULO) {
+	return (robo.lerSonarFrontal() <= DISTANCIA_OBSTACULO);
 }
 
-bool Sensores::maisEsqViuPreto(){
-	return  (robo.lerSensorLinhaEsq2() < refle_maisEsq.getSeparacao());  
-}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~~~~~~~~~~~~~~~~~~~~ CASOS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-bool Sensores::esqViuBranco(){
-	return  (robo.lerSensorLinhaEsq() > refle_Esq.getSeparacao());  
-}
-
-bool Sensores::esqViuPreto(){
-	return  (robo.lerSensorLinhaEsq() < refle_Esq.getSeparacao());  
-	
-}
-
-bool Sensores::dirViuBranco(){
-	return (robo.lerSensorLinhaDir() > refle_Dir.getSeparacao());  
-		
-}
-
-bool Sensores::dirViuPreto(){
-	return (robo.lerSensorLinhaDir() < refle_Dir.getSeparacao());  
-			
-}
-
-bool Sensores::maisDirViuBranco(){
-	return (robo.lerSensorLinhaDir2() > refle_maisDir.getSeparacao());  
-		
-}   
-
-bool Sensores::maisDirViuPreto(){
-	return (robo.lerSensorLinhaDir2() < refle_maisDir.getSeparacao());  
-	
-} 
-
-/////////////////////////////////////////
-
-bool Sensores::todosBrancos(){
+//------------------------------------------------------------------
+// Caso "Todos" ----------------------------------------------------
+bool Sensores::branco_branco_branco_preto() {
 	return(
-		maisEsqViuBranco() &&
-		esqViuBranco() &&
-		dirViuBranco() &&
-		maisDirViuBranco()
+		maisEsqViuBranco();
+		esqViuBranco();
+		dirViuBranco();
+		maisDirViuBranco();
 	);
 }
 
-bool Sensores::todosPretos(){
+bool Sensores::preto_preto_preto_preto() {
 	return(
-		maisEsqViuPreto() &&
-		esqViuPreto() &&
-		dirViuPreto() &&
-		maisDirViuPreto()
+		maisEsqViuPreto();
+		esqViuPreto();
+		dirViuPreto();
+		maisDirViuPreto();
 	);
 }
 
-///////////////////////////////////////////////////////
+//------------------------------------------------------------------
+// Caso "Internos" -------------------------------------------------
+bool Sensores::branco_preto_branco_branco() {
+	return(
+		maisEsqViuBranco();
+		esqViuPreto();
+		dirViuBranco();
+		maisDirViuBranco();
+	);
+}
 
+bool Sensores::branco_branco_preto_branco() {
+	return(
+		maisEsqViuBranco();
+		esqViuBranco();
+		dirViuPreto();
+		maisDirViuBranco();
+	);
+}
+
+//------------------------------------------------------------------
+// Caso "Externos" -------------------------------------------------
 bool Sensores::preto_branco_branco_branco(){
 	return(
 		maisEsqViuPreto() &&
@@ -78,6 +69,8 @@ bool Sensores::branco_branco_branco_preto(){
 	);
 }
 
+//------------------------------------------------------------------
+// Caso "Duplo" ----------------------------------------------------
 bool Sensores::preto_preto_branco_branco(){
 	return(
 		maisEsqViuPreto() &&
@@ -96,42 +89,8 @@ bool Sensores::branco_branco_preto_preto(){
 	);
 }
 
-bool Sensores::branco_preto_preto_branco(){
-	return(
-		maisEsqViuBranco() &&
-		esqViuPreto() &&
-		dirViuPreto() &&
-		maisDirViuBranco()
-	);
-}
-
-bool Sensores::preto_branco_branco_preto(){
-	return(
-		maisEsqViuPreto() &&
-		esqViuBranco() &&
-		dirViuBranco() &&
-		maisDirViuPreto()
-	);
-}
-
-bool Sensores::preto_branco_preto_branco(){
-	return(
-		maisEsqViuPreto() &&
-		esqViuBranco() &&
-		dirViuPreto() &&
-		maisDirViuBranco()
-	);
-}
-
-bool Sensores::branco_preto_branco_preto(){
-	return(
-		maisEsqViuBranco() &&
-		esqViuPreto() &&
-		dirViuBranco() &&
-		maisDirViuPreto()
-	);
-}
-
+//--------------------------------------------------------------------
+// Caso "Triplo" -----------------------------------------------------
 bool Sensores::preto_preto_preto_branco(){
 	return(
 		maisEsqViuPreto() &&
@@ -150,6 +109,28 @@ bool Sensores::branco_preto_preto_preto(){
 	);
 }
 
+//--------------------------------------------------------------------
+// Caso "Alternados" -------------------------------------------------
+bool Sensores::preto_branco_preto_branco(){
+	return(
+		maisEsqViuPreto() &&
+		esqViuBranco() &&
+		dirViuPreto() &&
+		maisDirViuBranco()
+	);
+}
+
+bool Sensores::branco_preto_branco_preto(){
+	return(
+		maisEsqViuBranco() &&
+		esqViuPreto() &&
+		dirViuBranco() &&
+		maisDirViuPreto()
+	);
+}
+
+//--------------------------------------------------------------------
+// Caso "Internos brancos" -------------------------------------------
 bool Sensores::preto_preto_branco_preto(){
 	return(
 		maisEsqViuPreto() &&
@@ -167,3 +148,59 @@ bool Sensores::preto_branco_preto_preto(){
 		maisDirViuPreto()
 	);
 }
+
+//-------------------------------------------------------------------
+// Caso "Duplo preto" -----------------------------------------------
+bool Sensores::branco_preto_preto_branco(){
+	return(
+		maisEsqViuBranco() &&
+		esqViuPreto() &&
+		dirViuPreto() &&
+		maisDirViuBranco()
+	);
+}
+
+bool Sensores::preto_branco_branco_preto(){
+	return(
+		maisEsqViuPreto() &&
+		esqViuBranco() &&
+		dirViuBranco() &&
+		maisDirViuPreto()
+	);
+}
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~~~~~~~~~~~~~~~~~~~~ INDIVIDUAIS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+bool Sensores::maisEsqViuBranco(){
+	return (robo.lerSensorLinhaEsq2() > refle_maisEsq.getSeparacao());  
+}
+
+bool Sensores::maisEsqViuPreto(){
+	return (robo.lerSensorLinhaEsq2() < refle_maisEsq.getSeparacao());  
+}
+
+bool Sensores::esqViuBranco(){
+	return (robo.lerSensorLinhaEsq() > refle_Esq.getSeparacao());  
+}
+
+bool Sensores::esqViuPreto(){
+	return (robo.lerSensorLinhaEsq() < refle_Esq.getSeparacao());  
+}
+
+bool Sensores::dirViuBranco(){
+	return (robo.lerSensorLinhaDir() > refle_Dir.getSeparacao());  	
+}
+
+bool Sensores::dirViuPreto(){
+	return (robo.lerSensorLinhaDir() < refle_Dir.getSeparacao());  		
+}
+
+bool Sensores::maisDirViuBranco(){
+	return (robo.lerSensorLinhaDir2() > refle_maisDir.getSeparacao());  	
+}   
+
+bool Sensores::maisDirViuPreto(){
+	return (robo.lerSensorLinhaDir2() < refle_maisDir.getSeparacao());  
+} 

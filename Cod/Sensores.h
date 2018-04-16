@@ -6,9 +6,16 @@
 
 class Sensores {
 public:
+
 	//~~~~~~~~~~~ SONAR ~~~~~~~~~~~//
 
-	bool sonarViuObstaculo();
+	bool sonarViuObstaculo(int DISTANCIA_OBSTACULO);
+	/* Função usada para verificar
+	   se o sonar frontal viu ou não um obstáculo.
+
+	   A "distância" entre o robô e o obstáculo é 
+	   definida na classe Estrategia.h - Linha: 28. 
+	*/
 
 	//----------------------------//
 
@@ -52,7 +59,18 @@ public:
 	// Caso "Duplo preto"
 
 	bool preto_branco_branco_preto();
-	bool branco_preto_preto_branco();	
+	bool branco_preto_preto_branco();
+
+	// Funções individuais
+
+	bool maisEsqViuBranco();
+	bool maisEsqViuPreto();
+	bool esqViuBranco();
+	bool esqViuPreto();
+	bool dirViuBranco();
+	bool dirViuPreto();
+	bool maisdirViuBranco();
+	bool maisdirViuPreto();
 
 
 private:
@@ -60,8 +78,5 @@ private:
 	Calibracao refle_maisEsq, refle_Esq, refle_Dir, refle_maisDir;
 
 };
-
-static Sensores sensores, sensor;
-
 
 #endif
