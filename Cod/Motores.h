@@ -4,36 +4,27 @@
 //#include "Setup.h"
 #include <robo_hardware.h>
 
+#define VEL 40
+
 class Motores {
 public:
 	/**** Funções de movimentação básica ****/
 	
-	void emFrente() { robo.acionarMotores(VEL_PADRAO,VEL_PADRAO); }
-	void virarEsquerda() { robo.acionarMotores(VEL_PADRAO *(-1), VEL_PADRAO); }
-	void virarDireita() { robo.acionarMotores(VEL_PADRAO,VEL_PADRAO *(-1)); }
+	void emFrente() { robo.acionarMotores(VEL,VEL); }
+	void virarEsquerda() { robo.acionarMotores(VEL *(-1), VEL); }
+	void virarDireita() { robo.acionarMotores(VEL,VEL *(-1)); }
+
+	void virarEixoEsq() { robo.acionarMotores(0,VEL); }
+	void virarEixoDir() { robo.acionarMotores(VEL,0); }
 
 	void parar(int tempo) {
 		robo.acionarMotores(0,0); 
 		delay(tempo);
 	}
 	void recuar(int tempo) {
-		robo.acionarMotores(VEL_PADRAO * (-1),VEL_PADRAO * (-1));
+		robo.acionarMotores(VEL * (-1),VEL * (-1));
 		delay(tempo);
 	}
-
-	/*------------------------------------------------------------------------*/
-
-	int VEL_PADRAO;
-
-	void setVelPadrao(int VEL_SET) { VEL_PADRAO = VEL_SET; } 
-	/*         ^                  ^                  ^         
-		Essa função foi criada para a facilitação da determinação
-		da velocidade padrão.
-	*/
-	
-	/*------------------------------------------------------------------------*/
-
-	
 };
 
 #endif
