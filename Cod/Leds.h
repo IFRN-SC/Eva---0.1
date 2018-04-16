@@ -2,7 +2,7 @@
 #define LEDS_H
 
 /* 
-// PINAGEM - LEDS
+//---------------- PINAGEM - LEDS --------------------//
  
 Futuro uso para comunicação dos sensores de refletância
 
@@ -11,7 +11,7 @@ Futuro uso para comunicação dos sensores de refletância
 #define LED_Dir 11
 #define LED_maisDir 12
 
-// 
+//-----------------------------------------------------// 
 */
 
 class Leds {
