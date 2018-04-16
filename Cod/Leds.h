@@ -3,6 +3,8 @@
 
 /* 
 // PINAGEM - LEDS
+ 
+Futuro uso para comunicação dos sensores de refletância
 
 #define LED_maisEsq 9
 #define LED_Esq 10
@@ -15,13 +17,14 @@
 class Leds {
 public:
 	void pinar(){
-		// Futuro uso para comunicação por leds
-
-		/*pinMode(LED_maisEsq, OUTPUT);		
+		
+		/*
+		pinMode(LED_maisEsq, OUTPUT);		
 		pinMode(LED_Esq, OUTPUT);
 		pinMode(LED_Dir, OUTPUT);
-		pinMode(LED_maisDir, OUTPUT);*/ 
-		
+		pinMode(LED_maisDir, OUTPUT);
+		*/ 
+
 		pinMode(10, OUTPUT);
 		pinMode(11, OUTPUT);
 	}
@@ -31,7 +34,7 @@ public:
 		switch (led) {
 			case 1: // maisEsq viu preto.
 				digitalWrite(LED_maisEsq, HIGH);
-				delay(500);
+				delay(300);
 				digitalWrite(LED_maisEsq, LOW);
 				break;
 			case 2:
