@@ -7,12 +7,15 @@ void Estrategia::run() {
 
  		   Se não, somente seguirá a linha.
  	*/
-	if (sensores.sonarViuObstaculo(DISTANCIA_OBSTACULO)) {
+	if (sensores.sonarViuObstaculo(DISTANCIA_OBSTACULO))
 		disviarObstaculo();
-	} 
-	else {
+	else
 		seguirLinha();
-	}
+}
+
+void Estrategia::calibrar(bool value) {
+	if (value)
+		calibracao.run();
 }
 
 void Estrategia::seguirLinha() {
