@@ -1,6 +1,11 @@
 #include "Estrategia.h"
 
 Estrategia estrategia;
+/*
+  Serão usadas funções deste objeto para
+  a calibração e controle estratégico do robô no 
+  void loop().
+*/
 
 void setup(){
 	Serial.begin(9600);
