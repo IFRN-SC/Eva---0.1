@@ -10,7 +10,7 @@ class Motores {
 public:
 	/**** Funções de movimentação básica ****/
 	
-	void emFrente() { robo.acionarMotores(VEL,VEL); }
+	void avancar() { robo.acionarMotores(VEL,VEL); }
 	void virarEsquerda() { robo.acionarMotores(VEL *(-1), VEL); }
 	void virarDireita() { robo.acionarMotores(VEL,VEL *(-1)); }
 
