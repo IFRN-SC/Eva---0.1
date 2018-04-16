@@ -1,12 +1,15 @@
 #include "Calibracao.h"
 
+Calibracao::Calibracao() {
+	estiverCalibrando = true;
+}
 
 void Calibracao::iniciar(){
 	menuCalibracao();
 }
 
 void Calibracao::menuCalibracao(){
-	while (escolha == 'S') {
+	while (estiverCalibrando) {
 		Serial.println("[--+ MENU CALIBRACAO +--]");
 		Serial.println();
 		Serial.println("O QUE DESEJAS SENHOR?");
@@ -24,22 +27,26 @@ void Calibracao::menuCalibracao(){
 			case 'P':
 			 	maximoPreto();
 			 	break;
-			default:
-				escolha = 'S';
+			case 'S':
+				estiverCalibranco = false;
 		}
 	}
 }
 
 void Calibracao::minimoBranco(){
-	Serial.println("CALIBRAR MINIMO BRANCO: ");
-	Serial.println();
-	Serial.println("POSICIONES OS SENSORES NO BRANCO!");
-	Serial.println();
-	Serial.println("[1] PEGAR VALORES");
-	Serial.println("[2] SAIR");
-	Serial.println();
-	Serial.print("R = ");
-	esperarParaLer();
+	int resp = 0;
+	while (resp != 0){
+		Serial.println("CALIBRAR MINIMO BRANCO: ");
+		Serial.println();
+		Serial.println("POSICIONES OS SENSORES NO BRANCO!");
+		Serial.println();
+		Serial.println("INSIRA QUALQUER COISA PARA PEGAR VALORES");
+		Serial.println("[0] SAIR");
+		Serial.println();
+		Serial.print("R = ");
+		esperarParaLer();
+		resp = Serial.read();
+	}
 }
 
 
