@@ -69,8 +69,8 @@ public:
 	bool esqViuPreto();
 	bool dirViuBranco();
 	bool dirViuPreto();
-	bool maisdirViuBranco();
-	bool maisdirViuPreto();
+	bool maisDirViuBranco();
+	bool maisDirViuPreto();
 
 
 private:
