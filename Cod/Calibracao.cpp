@@ -4,11 +4,12 @@ Calibracao::Calibracao() {
 	estiverCalibrando = true;
 }
 
-void Calibracao::iniciar(){
+void Calibracao::run(){
 	menuCalibracao();
 }
 
 void Calibracao::menuCalibracao(){
+	char escolha = ' ';
 	while (estiverCalibrando) {
 		Serial.println("[--+ MENU CALIBRACAO +--]");
 		Serial.println();
@@ -28,7 +29,7 @@ void Calibracao::menuCalibracao(){
 			 	maximoPreto();
 			 	break;
 			case 'S':
-				estiverCalibranco = false;
+				estiverCalibrando = false;
 		}
 	}
 }
