@@ -15,7 +15,7 @@
 #include "Motores.h"
 /* !-- Serão usadas funções de movimentação básica do robô.
 	   Ex.:
-	   		1- motores.emFrente();
+	   		1- motores.avancar();
 	   		2- motores.recuar();
 
 	   		1 - Ordena que os motores façam o robô ir para frente
@@ -25,7 +25,7 @@
 
 			(VEL -> definida em Motores.h)
 */
-#define DISTANCIA_OBSTACULO 10; 
+#define DISTANCIA_OBSTACULO 10
 /* !-- Define a partir de qual valor retornado pelo
   	   sonar frontal o robô irá considerar que há
   	   um obstáculo em sua frente.
@@ -57,6 +57,8 @@ private:
 		caso alguns dos sensores virem preto.
 	*/
 	void desviarObstaculo();
+	void alinharObstaculo(char lado);
+	bool obstaculoDesalinhado();
 	/* !--desviarObstaculo >
 		Função que realiza a estratégia do desvio
 		de obstáculos.
@@ -65,9 +67,11 @@ private:
 	
 	//void passarVerde();
 
+	Calibracao calibracao;
 	Sensores sensores;
 	//Obstaculo obstaculo;
 	Motores motores;
+	
 };
 
 #endif
