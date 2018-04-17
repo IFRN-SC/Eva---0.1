@@ -8,7 +8,7 @@
 
 class Motores {
 public:
-	/**** Funções de movimentação básica ****/
+	//~~~~~~~~~~~~ Funções de movimentação básica ~~~~~~~~~~~~~~~~~~//
 	
 	void avancar() { robo.acionarMotores(VEL,VEL); }
 	void virarEsquerda() { robo.acionarMotores(VEL *(-1), VEL); }
