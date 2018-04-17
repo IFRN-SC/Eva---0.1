@@ -3,7 +3,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~ SONAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 bool Sensores::sonarViuObstaculo(int DISTANCIA_OBSTACULO) {
-	return (robo.lerSonarFrontal() <= DISTANCIA_OBSTACULO);
+	return (robo.lerSensorSonarFrontal() <= DISTANCIA_OBSTACULO);
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
@@ -13,19 +13,19 @@ bool Sensores::sonarViuObstaculo(int DISTANCIA_OBSTACULO) {
 // Caso "Todos" ----------------------------------------------------
 bool Sensores::branco_branco_branco_preto() {
 	return(
-		maisEsqViuBranco();
-		esqViuBranco();
-		dirViuBranco();
-		maisDirViuBranco();
+		maisEsqViuBranco() &&
+		esqViuBranco() &&
+		dirViuBranco() &&
+		maisDirViuBranco()
 	);
 }
 
 bool Sensores::preto_preto_preto_preto() {
 	return(
-		maisEsqViuPreto();
-		esqViuPreto();
-		dirViuPreto();
-		maisDirViuPreto();
+		maisEsqViuPreto() &&
+		esqViuPreto() &&
+		dirViuPreto() &&
+		maisDirViuPreto()
 	);
 }
 
@@ -33,19 +33,19 @@ bool Sensores::preto_preto_preto_preto() {
 // Caso "Internos" -------------------------------------------------
 bool Sensores::branco_preto_branco_branco() {
 	return(
-		maisEsqViuBranco();
-		esqViuPreto();
-		dirViuBranco();
-		maisDirViuBranco();
+		maisEsqViuBranco() &&
+		esqViuPreto() &&
+		dirViuBranco() &&
+		maisDirViuBranco()
 	);
 }
 
 bool Sensores::branco_branco_preto_branco() {
 	return(
-		maisEsqViuBranco();
-		esqViuBranco();
-		dirViuPreto();
-		maisDirViuBranco();
+		maisEsqViuBranco() &&
+		esqViuBranco() &&
+		dirViuPreto() &&
+		maisDirViuBranco()
 	);
 }
 
@@ -53,6 +53,9 @@ bool Sensores::branco_branco_preto_branco() {
 // Caso "Externos" -------------------------------------------------
 bool Sensores::preto_branco_branco_branco() {
 	return(
+		maisEsqViuPreto() &&
+		maisEsqViuPreto() &&
+		maisEsqViuPreto() &&
 		maisEsqViuPreto() &&
 		esqViuBranco() &&
 		dirViuBranco() &&
