@@ -11,7 +11,7 @@ bool Sensores::sonarViuObstaculo(int DISTANCIA_OBSTACULO) {
 
 //------------------------------------------------------------------
 // Caso "Todos" ----------------------------------------------------
-bool Sensores::branco_branco_branco_preto() {
+bool Sensores::branco_branco_branco_branco() {
 	return(
 		maisEsqViuBranco() &&
 		esqViuBranco() &&
