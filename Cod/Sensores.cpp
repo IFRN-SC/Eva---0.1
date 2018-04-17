@@ -51,7 +51,7 @@ bool Sensores::branco_branco_preto_branco() {
 
 //------------------------------------------------------------------
 // Caso "Externos" -------------------------------------------------
-bool Sensores::preto_branco_branco_branco(){
+bool Sensores::preto_branco_branco_branco() {
 	return(
 		maisEsqViuPreto() &&
 		esqViuBranco() &&
@@ -60,7 +60,7 @@ bool Sensores::preto_branco_branco_branco(){
 	);
 }
 
-bool Sensores::branco_branco_branco_preto(){
+bool Sensores::branco_branco_branco_preto() {
 	return(
 		maisEsqViuBranco() &&
 		esqViuBranco() &&
@@ -71,7 +71,7 @@ bool Sensores::branco_branco_branco_preto(){
 
 //------------------------------------------------------------------
 // Caso "Duplo" ----------------------------------------------------
-bool Sensores::preto_preto_branco_branco(){
+bool Sensores::preto_preto_branco_branco() {
 	return(
 		maisEsqViuPreto() &&
 		esqViuPreto() &&
@@ -80,7 +80,7 @@ bool Sensores::preto_preto_branco_branco(){
 	);
 }
 
-bool Sensores::branco_branco_preto_preto(){
+bool Sensores::branco_branco_preto_preto() {
 	return(
 		maisEsqViuBranco() &&
 		esqViuBranco() &&
@@ -91,7 +91,7 @@ bool Sensores::branco_branco_preto_preto(){
 
 //--------------------------------------------------------------------
 // Caso "Triplo" -----------------------------------------------------
-bool Sensores::preto_preto_preto_branco(){
+bool Sensores::preto_preto_preto_branco() {
 	return(
 		maisEsqViuPreto() &&
 		esqViuPreto() &&
@@ -100,7 +100,7 @@ bool Sensores::preto_preto_preto_branco(){
 	);
 }
 
-bool Sensores::branco_preto_preto_preto(){
+bool Sensores::branco_preto_preto_preto() {
 	return(
 		maisEsqViuBranco() &&
 		esqViuPreto() &&
@@ -111,7 +111,7 @@ bool Sensores::branco_preto_preto_preto(){
 
 //--------------------------------------------------------------------
 // Caso "Alternados" -------------------------------------------------
-bool Sensores::preto_branco_preto_branco(){
+bool Sensores::preto_branco_preto_branco() {
 	return(
 		maisEsqViuPreto() &&
 		esqViuBranco() &&
@@ -120,7 +120,7 @@ bool Sensores::preto_branco_preto_branco(){
 	);
 }
 
-bool Sensores::branco_preto_branco_preto(){
+bool Sensores::branco_preto_branco_preto() {
 	return(
 		maisEsqViuBranco() &&
 		esqViuPreto() &&
@@ -131,7 +131,7 @@ bool Sensores::branco_preto_branco_preto(){
 
 //--------------------------------------------------------------------
 // Caso "Internos brancos" -------------------------------------------
-bool Sensores::preto_preto_branco_preto(){
+bool Sensores::preto_preto_branco_preto() {
 	return(
 		maisEsqViuPreto() &&
 		esqViuPreto() &&
@@ -140,7 +140,7 @@ bool Sensores::preto_preto_branco_preto(){
 	);
 }
 
-bool Sensores::preto_branco_preto_preto(){
+bool Sensores::preto_branco_preto_preto() {
 	return(
 		maisEsqViuPreto() &&
 		esqViuBranco() &&
@@ -151,7 +151,7 @@ bool Sensores::preto_branco_preto_preto(){
 
 //-------------------------------------------------------------------
 // Caso "Duplo preto" -----------------------------------------------
-bool Sensores::branco_preto_preto_branco(){
+bool Sensores::branco_preto_preto_branco() {
 	return(
 		maisEsqViuBranco() &&
 		esqViuPreto() &&
@@ -160,7 +160,7 @@ bool Sensores::branco_preto_preto_branco(){
 	);
 }
 
-bool Sensores::preto_branco_branco_preto(){
+bool Sensores::preto_branco_branco_preto() {
 	return(
 		maisEsqViuPreto() &&
 		esqViuBranco() &&
@@ -173,34 +173,34 @@ bool Sensores::preto_branco_branco_preto(){
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 //~~~~~~~~~~~~~~~~~~~~~~~~~ INDIVIDUAIS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-bool Sensores::maisEsqViuBranco(){
+bool Sensores::maisEsqViuBranco() {
 	return (robo.lerSensorLinhaEsq2() > refle_maisEsq.getSeparacao());  
 }
 
-bool Sensores::maisEsqViuPreto(){
+bool Sensores::maisEsqViuPreto() {
 	return (robo.lerSensorLinhaEsq2() < refle_maisEsq.getSeparacao());  
 }
 
-bool Sensores::esqViuBranco(){
+bool Sensores::esqViuBranco() {
 	return (robo.lerSensorLinhaEsq() > refle_Esq.getSeparacao());  
 }
 
-bool Sensores::esqViuPreto(){
+bool Sensores::esqViuPreto() {
 	return (robo.lerSensorLinhaEsq() < refle_Esq.getSeparacao());  
 }
 
-bool Sensores::dirViuBranco(){
+bool Sensores::dirViuBranco() {
 	return (robo.lerSensorLinhaDir() > refle_Dir.getSeparacao());  	
 }
 
-bool Sensores::dirViuPreto(){
+bool Sensores::dirViuPreto() {
 	return (robo.lerSensorLinhaDir() < refle_Dir.getSeparacao());  		
 }
 
-bool Sensores::maisDirViuBranco(){
+bool Sensores::maisDirViuBranco() {
 	return (robo.lerSensorLinhaDir2() > refle_maisDir.getSeparacao());  	
 }   
 
-bool Sensores::maisDirViuPreto(){
+bool Sensores::maisDirViuPreto() {
 	return (robo.lerSensorLinhaDir2() < refle_maisDir.getSeparacao());  
 } 
