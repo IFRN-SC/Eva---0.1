@@ -14,13 +14,19 @@ public:
 	Calibracao();
 	
 private:
-
+	
+	float minimoEsq2;
+	float minimoEsq;
+	float minimoDir;
+	float minimoDir2;
 
 	void menuCalibracao();
 	void esperarParaLer();
 
 	void minimoBranco();
 	void maximoPreto();
+	
+	void calculeMinimo(int valorEsq2,int valorEsq,int valorDir,int valorDir2);
 	
 	bool estiverCalibrando;
 };
