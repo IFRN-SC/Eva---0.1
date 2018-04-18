@@ -14,8 +14,8 @@ void Estrategia::run() {
 }
 
 void Estrategia::calibrar(bool value) {
-	if (value) 
-		calibracao.run();
+//	if (value) 
+//		calibracao.run();
 }
 
 void Estrategia::seguirLinha() {
