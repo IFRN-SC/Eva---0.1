@@ -38,6 +38,7 @@ void Calibracao::menuCalibracao(){
 	}
 }
 
+/*
 void Calibracao::minimoBranco(){
 	char escolha = ' ';
 	while (1){
@@ -56,6 +57,8 @@ void Calibracao::minimoBranco(){
 		else calculeMinimo(robo.lerSensorLinhaEsq2(),robo.lerSensorLinhaEsq(),robo.lerSensorLinhaDir(),robo.lerSensorLinhaDir2);
 	}
 }
+*/
+
 void Calibracao::maximoPreto(){}
 
 void Calibracao::calculeMinimo(int valorEsq2,int valorEsq,int valorDir,int valorDir2){
