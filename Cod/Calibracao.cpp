@@ -50,7 +50,7 @@ void Calibracao::minimoBranco(){
 		Serial.println();
 		Serial.print("R = ");
 		esperarParaLer();
-		resp = Serial.read();
+		escolha = Serial.read();
 		
 		if (escolha == 'S') menuCalibracao();
 		else calculeMinimo(robo.lerSensorLinhaEsq2(),robo.lerSensorLinhaEsq(),robo.lerSensorLinhaDir(),robo.lerSensorLinhaDir2);
